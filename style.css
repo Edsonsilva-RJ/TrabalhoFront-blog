@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+/* Fonte e cor de fundo da página */
+
+body{
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #3f1669;
+    color: aliceblue;
+}
+header, footer{
+    padding: 20px;
+    background-color: #6322a3;
+    color: aliceblue;
+}
+main{
+    
+}
