@@ -10,24 +10,41 @@ body {
     background-color: #3f1669;
     color: aliceblue;
     line-height: 1.6;
+    
+    /* Configuração para o rodapé ficar no pé */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Faz o corpo ocupar 100% da altura da tela */
 }
 
+main {
+    flex: 1; /* Faz o conteúdo principal "empurrar" o rodapé para baixo */
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    width: 100%;
+}
+.foto-blog {
+    width: 100%;       /* A imagem se ajusta à largura do container */
+    max-width: 600px;  /* Define um limite para não ficar gigante */
+    height: auto;      /* Mantém a proporção */
+    border-radius: 8px;
+    border: 3px solid #6322a3;
+    margin-top: 15px;
+}
+
+figcaption {
+    font-size: 0.9rem;
+    color: #bdc3c7;
+    font-style: italic;
+    margin-bottom: 15px;
+}
 /* Header e Footer estilizados [cite: 41, 43] */
 header, footer {
     padding: 40px 20px;
     background-color: #6322a3;
     text-align: center;
 }
-
-/* Uso de Flexbox na Main - Diferencial para nota  */
-main {
-    max-width: 1000px;
-    margin: 20px auto;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-}
-
 /* Estilização do Botão (Requisito Etapa 2) [cite: 46] */
 .btn-saiba-mais {
     display: inline-block;
