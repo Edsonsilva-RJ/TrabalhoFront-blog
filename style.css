@@ -40,7 +40,12 @@ figcaption {
     margin-bottom: 15px;
 }
 /* Header e Footer estilizados [cite: 41, 43] */
-header, footer {
+header{
+    padding: 40px 20px;
+    background-color: #6322a3;
+    text-align: center;
+}
+ footer{
     padding: 40px 20px;
     background-color: #6322a3;
     text-align: center;
