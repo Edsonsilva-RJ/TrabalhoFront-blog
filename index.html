@@ -10,37 +10,93 @@
     <header>
         <h1>Pixel&Luz</h1>
         <p>A arte de capturar o invisível.</p>
+        <nav>
+            <ul>
+                <li><a href="#galeria-cliques">Home</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li><button id="btn-tema">Alternar Tema</button></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
-        <section id="galeria">
-            <h2>Últimos Cliques</h2>
-            <div class="card">
-                <h3>Título da Foto</h3>
-                <p>Uma breve descrição sobre a técnica utilizada.</p>
-                <a href="#" class="btn-saiba-mais">Saiba Mais</a>
+        <section id="galeria-cliques">
+            <h2>Galeria Crepúsculo</h2>
+            
+            <div class="container-cards">
+                
+                <article class="card">
+                    <img src="Img/Jacob.jpg" alt="Jacob Black posando sob a luz do sol" class="foto-card" onclick="abrirModal(this.src)">
+                    <div class="card-conteudo">
+                        <h3>Jacob Black</h3>
+                        <p>Capturando a energia e o calor do sol em La Push.</p>
+                        <a href="paginas/jacob.html" class="btn-trabalho">Veja meu trabalho</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="Img/matilhaJacob.avif" alt="Matilha de lobos reunida na floresta de Forks" class="foto-card" onclick="abrirModal(this.src)">
+                    <div class="card-conteudo">
+                        <h3>A Matilha</h3>
+                        <p>Fotografia de união, lealdade e força selvagem.</p>
+                        <a href="paginas/matilha.html" class="btn-trabalho">Veja meu trabalho</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="Img/Bella.jpg" alt="Bella Swan com tons frios e olhar intenso" class="foto-card" onclick="abrirModal(this.src)">
+                    <div class="card-conteudo">
+                        <h3>Bella Swan</h3>
+                        <p>Exploração de sombras, melancolia e tons frios.</p>
+                        <a href="paginas/bella.html" class="btn-trabalho">Veja meu trabalho</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="Img/Edward.jpg" alt="Edward Cullen em ambiente florestal misterioso" class="foto-card" onclick="abrirModal(this.src)">
+                    <div class="card-conteudo">
+                        <h3>Edward Cullen</h3>
+                        <p>Retrato artístico com foco em mistério e eternidade.</p>
+                        <a href="paginas/edward.html" class="btn-trabalho">Veja meu trabalho</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="Img/Alice.jpg" alt="Alice Cullen com olhar visionário e dinâmico" class="foto-card" onclick="abrirModal(this.src)">
+                    <div class="card-conteudo">
+                        <h3>Alice Cullen</h3>
+                        <p>Estética visionária e ângulos dinâmicos da moda.</p>
+                        <a href="paginas/alice.html" class="btn-trabalho">Veja meu trabalho</a>
+                    </div>
+                </article>
+
             </div>
         </section>
-        <section id="galeria">
-            <h2>Últimos Cliques</h2>
-            
-            <article class="post">
-                <h3>Amanhecer na Montanha</h3>
-                
-                <figure>
-                    <img src="img/foto1.jpg" alt="Descrição da foto para acessibilidade" class="foto-blog">
-                    <figcaption>Foto tirada com uma lente 35mm em Minas Gerais.</figcaption>
-                </figure>
-        
-                <p>Nesta sessão, exploramos o uso da luz natural para destacar texturas...</p>
-                
-                <a href="https://github.com/Edsonsilva-RJ/TrabalhoFront-blog" target="_blank" class="btn-saiba-mais">Ver no GitHub</a>
-            </article>
+
+        <section id="contato">
+            <h2>Entre em Contato</h2>
+            <form class="form-contato">
+                <input type="text" placeholder="Seu Nome" required>
+                <input type="email" placeholder="Seu E-mail" required>
+                <textarea placeholder="Sua Mensagem"></textarea>
+                <button type="submit" class="btn-trabalho">Enviar Mensagem</button>
+            </form>
         </section>
     </main>
 
+    <div id="modal" class="modal" onclick="fecharModal()">
+        <span class="fechar">&times;</span>
+        <img class="modal-conteudo" id="img-modal">
+    </div>
+
     <footer>
-        <p>&copy; 2026 Pixel&Luz - Nosso blog vai te impressionar</p>
+        <div class="rodape-botoes">
+            <a href="#" class="btn-footer">Saiba Mais</a>
+            <a href="https://github.com/Edsonsilva-RJ/TrabalhoFront-blog" target="_blank" class="btn-footer">GitHub</a>
+        </div>
+        <p>&copy; 2026 Pixel&Luz - A arte de capturar o invisível. Projeto SENAI Jacarepaguá.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
