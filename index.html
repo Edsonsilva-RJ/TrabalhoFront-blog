@@ -7,42 +7,44 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Pixel&Luz</h1>
+    <header>                                    <!-- Início da seção de cabeçalho da página -->
+        <h1>Pixel&Luz</h1> <!-- Título -->
         <p>A arte de capturar o invisível.</p>
         <nav>
-            <ul>
-                <li><a href="#galeria-cliques">Home</a></li>
-                <li><a href="#contato">Contato</a></li>
-                <li><button id="btn-tema">Alternar Tema</button></li>
+            <ul>                                <!-- Lista para organizar os itens do menu-->
+                <!-- Menu de navegação  -->
+                <li><a href="#galeria-cliques">Home</a></li>   <!-- leva à seção "galeria-cliques" -->
+                <li><a href="#contato">Contato</a></li>        <!-- leva à seção "contato" -->
+                <li><button id="btn-tema">Alternar Tema</button></li>    <!-- Botão que alterna entre tema claro/escuro -->
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section id="galeria-cliques">
-            <h2>Galeria Crepúsculo</h2>
+    <main>                                        <!-- Indicar o conteúdo principal da página -->
+        <section id="galeria-cliques">            <!-- Seção da galeria de fotos, identificada pelo id "galeria-cliques" -->
+            <h2>Galeria Crepúsculo</h2>           <!-- Título da seção -->
             
-            <div class="container-cards">
+            <div class="container-cards">         <!-- Agrupa todos os cards da galeria -->
                 
-                <article class="card">
-                    <img src="c:\Users\edson\Desktop\TrabalhoFront-blog\Img\Jacob1.webp" alt="Jacob Black posando sob a luz do sol" class="foto-card" onclick="abrirModal(this.src)">
+                <article class="card">            <!-- representa um card individual -->
+                    <img src="./Img/Jacob1.webp" alt="Jacob Black posando sob a luz do sol" class="foto-card" onclick="abrirModal(this.src)">
                     <div class="card-conteudo">
                         <h3>Jacob Black</h3>
                         <p>Capturando a energia e o calor do sol em La Push.</p>
-                        <a href="c:\Users\edson\Desktop\TrabalhoFront-blog\paginas\Jacob.html" class="btn-trabalho">Veja meu trabalho</a>
+                        <a href="./paginas/Jacob.html" class="btn-trabalho">Veja meu trabalho</a>
                     </div>
                 </article>
-
+                
                 <article class="card">
                     <img src="c:\Users\edson\Desktop\TrabalhoFront-blog\Img\matilha1.png" alt="Matilha de lobos reunida na floresta de Forks" class="foto-card" onclick="abrirModal(this.src)">
-                    <div class="card-conteudo">
+                    <!-- Imagem do card, com descrição alternativa (alt) para acessibilidade. O atributo onclick chama a função abrirModal ao clicar na imagem -->
+                    <div class="card-conteudo">        <!-- Div que contém o texto e link do card -->
                         <h3>A Matilha</h3>
                         <p>Fotografia de união, lealdade e força selvagem.</p>
-                        <a href="c:\Users\edson\Desktop\TrabalhoFront-blog\paginas\matilha.html" class="btn-trabalho">Veja meu trabalho</a>
+                        <a href="c:\Users\edson\Desktop\TrabalhoFront-blog\paginas\matilha.html" class="btn-trabalho">Veja meu trabalho</a>   <!-- Abre a galeria do personagem -->
                     </div>
                 </article>
-
+                    <!-- A estrutura se repete para cada perfil -->
                 <article class="card">
                     <img src="c:\Users\edson\Desktop\TrabalhoFront-blog\Img\Bella1.jpg" alt="Bella Swan com tons frios e olhar intenso" class="foto-card" onclick="abrirModal(this.src)">
                     <div class="card-conteudo">
@@ -73,30 +75,33 @@
             </div>
         </section>
 
-        <section id="contato">
+        <section id="contato">                             <!-- Sessão para entrar em contato -->
             <h2>Entre em Contato</h2>
+            <!-- Formulário para fazer contato -->
             <form class="form-contato">
-                <input type="text" placeholder="Seu Nome" required>
-                <input type="email" placeholder="Seu E-mail" required>
-                <textarea placeholder="Sua Mensagem"></textarea>
-                <button type="submit" class="btn-trabalho">Enviar Mensagem</button>
+                <input type="text" placeholder="Seu Nome" required>                  <!-- Campo de nome -->
+                <input type="email" placeholder="Seu E-mail" required>               <!-- campo de e-mail -->
+                <textarea placeholder="Sua Mensagem"></textarea>                     <!-- Mensagem que o usuário deseja enviar -->
+                <button type="submit" class="btn-trabalho">Enviar Mensagem</button>  <!-- Botão para confirmar -->
             </form>
         </section>
     </main>
 
-    <div id="modal" class="modal" onclick="fecharModal()">
-        <span class="fechar">&times;</span>
-        <img class="modal-conteudo" id="img-modal">
+    <div id="modal" class="modal" onclick="fecharModal()">                            
+        <!-- Div que representa a janela modal (pop-up). O atributo id="modal" permite identificar e manipular via CSS/JS. 
+        class="modal" aplica estilos definidos para modais. onclick="fecharModal()" fecha o modal quando o usuário clica fora da imagem. -->
+        <span class="fechar">&times;</span>                <!-- Elemento <span> usado como botão de fechar. O símbolo "&times;" (×) é um ícone de fechar. -->                         
+        <img class="modal-conteudo" id="img-modal">        <!-- Imagem exibida dentro do modal. class="modal-conteudo" aplica estilo específico. id="img-modal" permite trocar dinamicamente a imagem via JavaScript. -->
     </div>
 
-    <footer>
-        <div class="rodape-botoes">
-            <a href="#" class="btn-footer">Saiba Mais</a>
-            <a href="https://github.com/Edsonsilva-RJ/TrabalhoFront-blog" target="_blank" class="btn-footer">GitHub</a>
+    <footer>                                               <!-- Rodapé da página, geralmente contém links e informações finais -->
+        <div class="rodape-botoes">                        <!-- Div que agrupa os botões/links do rodapé -->
+            <a href="#" class="btn-footer">Saiba Mais</a>  <!-- botão que leva para a página saiba mais -->
+            <a href="https://github.com/Edsonsilva-RJ/TrabalhoFront-blog" target="_blank" class="btn-footer">GitHub</a>  <!-- Link para o repositório no GitHub, abre em nova aba por causa de target="_blank" -->
         </div>
         <p>&copy; 2026 Pixel&Luz - A arte de capturar o invisível. Projeto SENAI Jacarepaguá.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js"></script><!-- Importa o arquivo JavaScript externo "script.js", onde ficam as funções de modo claro e modo escuro -->
 </body>
 </html>
