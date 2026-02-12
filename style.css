@@ -1,20 +1,293 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; 
+/* ============================================================
+   1. RESET E CONFIGURAÇÕES GERAIS (Boas Práticas SENAI)
+   ============================================================ */
+   * {
+    margin: 0;                 /* Remove margens padrão de todos os elementos */
+    padding: 0;                /* Remove espaçamentos internos padrão */
+    box-sizing: border-box;    /* Faz com que largura/altura incluam borda e padding */
 }
-/* Fonte e cor de fundo da pagina */
 
-body{
-    font-family: 'Times New Roman', Times, serif;
-    background-color: #3f1669;
-    color: aliceblue;
+:root {
+    /* Declaração de variáveis CSS (custom properties) para facilitar manutenção */
+    --bg-dark: #3f1669;        /* Cor de fundo principal (tema escuro) */
+    --bg-card-dark: #511b8a;   /* Cor de fundo dos cards */
+    --text-dark: aliceblue;    /* Cor do texto no tema escuro */
+    --accent: #ff9f43;         /* Cor de destaque (botões, links) */
+    --github-color: #24292e;   /* Cor específica para botão/link GitHub */
+    --header-footer: #6322a3;  /* Cor usada em header e footer */
 }
-header, footer{
-    padding: 20px;
-    background-color: #6322a3;
-    color: aliceblue;
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  /* Define a família de fontes padrão do site */
+    background-color: var(--bg-dark);              /* Usa a variável definida para cor de fundo */
+    color: var(--text-dark);                       /* Usa a variável para cor do texto */
+    line-height: 1.6;                              /* Espaçamento entre linhas para melhor legibilidade */
+    display: flex;
+    flex-direction: column;                        /* Faz o body se comportar como um container flex em coluna */
+    min-height: 100vh;                             /* Garante que o body ocupe toda a altura da janela */   
+    transition: background-color 0.4s, color 0.4s; /* Suaviza a transição de cores (útil para alternar tema claro/escuro) */
 }
-main{
-    
+/* ============================================================
+   2. CABEÇALHO E NAVEGAÇÃO (Centralizados)
+   ============================================================ */
+   header {
+    background-color: var(--header-footer);  /* Define a cor de fundo do cabeçalho usando a variável */
+    padding: 40px 20px;                      /* Espaçamento interno: 40px em cima/baixo e 20px nas laterais */
+    text-align: center;                      /* Centraliza o texto dentro do header */
+    display: flex;                           /* Torna o header um container flexível */
+    flex-direction: column;                  /* Organiza os elementos em coluna (um abaixo do outro) */
+    align-items: center;                     /* Alinha os itens ao centro horizontalmente */
 }
+
+nav ul {
+    list-style: none;                        /* Remove os marcadores da lista */
+    display: flex;                           /* Coloca os itens lado a lado (em linha) */
+    justify-content: center;                 /* Centraliza os itens no espaço disponível */
+    gap: 20px;                               /* Espaço de 20px entre cada item */
+    margin-top: 15px;                        /* Espaço acima da lista, separando do título */
+    padding: 0;                              /* Remove espaçamento interno padrão da lista */
+}
+
+nav a {
+    color: aliceblue;                        /* Cor dos links */
+    text-decoration: none;                   /* Remove o sublinhado dos links */
+    font-weight: bold;                       /* Deixa o texto em negrito */
+}
+
+#btn-tema {
+    padding: 5px 15px;                       /* Espaçamento interno do botão */
+    cursor: pointer;                         /* Mostra o cursor de mão ao passar por cima */
+    border-radius: 20px;                     /* Bordas arredondadas (formato de pílula) */
+    border: none;                            /* Remove a borda padrão */
+    background-color: var(--accent);         /* Cor de fundo do botão (variável de destaque) */
+    color: white;                            /* Cor do texto do botão */
+    font-weight: bold;                       /* Texto em negrito */
+    transition: 0.3s;                        /* Suaviza animações (hover) em 0.3 segundos */
+}
+
+#btn-tema:hover {
+    transform: scale(1.1);                   /* Aumenta o botão em 10% ao passar o mouse */
+}
+/* ============================================================
+   3. MAIN E CONTAINER DE CARDS (Flexbox)
+   ============================================================ */
+   main {
+    flex: 1;                          /* Faz o main ocupar todo o espaço disponível no layout flex do body */
+    padding: 40px 20px;                /* Espaçamento interno: 40px em cima/baixo e 20px nas laterais */
+    max-width: 1400px;                 /* Limita a largura máxima do conteúdo a 1400px */
+    margin: 0 auto;                    /* Centraliza o main horizontalmente */
+    width: 100%;                       /* Garante que ocupe toda a largura disponível */
+}
+
+h2 {
+    text-align: center;                /* Centraliza o título */
+    margin-bottom: 30px;               /* Espaço abaixo do título */
+    font-size: 2rem;                   /* Define o tamanho da fonte (2 vezes o tamanho padrão) */
+}
+
+.container-cards {
+    display: flex;                     /* Torna o container flexível */
+    flex-wrap: wrap;                   /* Permite que os cards quebrem linha quando não couberem */
+    gap: 25px;                         /* Espaço de 25px entre os cards */
+    justify-content: center;           /* Centraliza os cards dentro do container */
+}
+
+/* ============================================================
+   4. ESTILO DOS CARDS (Personagens)
+   ============================================================ */
+   .card {
+    background-color: var(--bg-card-dark);   /* Cor de fundo do card, usando variável */
+    border-radius: 12px;                     /* Bordas arredondadas */
+    width: 250px;                            /* Largura fixa (pensada para caber 5 cards em telas HD) */
+    overflow: hidden;                        /* Esconde conteúdo que ultrapasse os limites do card */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);  /* Sombra para dar efeito de profundidade */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suaviza animações de hover */
+    display: flex;                           /* Torna o card um container flexível */
+    flex-direction: column;                  /* Organiza conteúdo em coluna (imagem em cima, texto embaixo) */
+}
+
+.card:hover {
+    transform: translateY(-10px);            /* Move o card 10px para cima ao passar o mouse */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.6);  /* Intensifica a sombra para destacar o card */
+}
+
+.foto-card {
+    width: 100%;                             /* Imagem ocupa toda a largura do card */
+    height: 180px;                           /* Altura fixa da imagem */
+    object-fit: cover;                       /* Ajusta a imagem para cobrir sem distorcer */
+    cursor: pointer;                         /* Cursor de mão ao passar sobre a imagem */
+}
+
+.card-conteudo {
+    padding: 20px;                           /* Espaçamento interno do conteúdo */
+    text-align: center;                      /* Centraliza texto e elementos */
+    display: flex;                           /* Flexbox para organizar conteúdo */
+    flex-direction: column;                  /* Conteúdo em coluna (título, texto, botão) */
+    justify-content: space-between;          /* Distribui espaço entre elementos */
+    flex-grow: 1;                            /* Faz o conteúdo ocupar todo o espaço disponível */
+}
+
+.card-conteudo h3 {
+    font-size: 1.2rem;                       /* Tamanho da fonte do título */
+    margin-bottom: 10px;                     /* Espaço abaixo do título */
+    color: var(--accent);                    /* Cor de destaque para o título */
+}
+
+.card-conteudo p {
+    font-size: 0.9rem;                       /* Texto um pouco menor */
+    margin-bottom: 15px;                     /* Espaço abaixo do parágrafo */
+    color: #bdc3c7;                          /* Cor cinza clara para descrição */
+}
+
+
+/* Botão Único do Card */
+.btn-trabalho {
+    background-color: var(--accent);   /* Cor de fundo do botão, usando a variável de destaque */
+    color: white;                      /* Texto branco para contraste */
+    text-decoration: none;             /* Remove sublinhado (caso seja um link <a>) */
+    padding: 10px;                     /* Espaçamento interno para aumentar a área clicável */
+    border-radius: 6px;                /* Bordas arredondadas */
+    font-weight: bold;                 /* Texto em negrito */
+    font-size: 0.85rem;                /* Tamanho da fonte um pouco menor */
+    transition: 0.3s;                  /* Suaviza mudanças de estilo (hover) em 0.3 segundos */
+    margin-top: auto;                  /* Empurra o botão para o fundo do card, ocupando o espaço restante */
+}
+
+.btn-trabalho:hover {
+    background-color: #e68a2e;         /* Muda a cor de fundo ao passar o mouse, criando efeito visual */
+}
+
+/* ============================================================
+   5. FORMULÁRIO DE CONTATO
+   ============================================================ */
+   
+   #contato {
+    margin-top: 60px;                          /* Espaço acima da seção de contato */
+    padding: 40px 20px;                        /* Espaçamento interno da seção */
+    background-color: rgba(255, 255, 255, 0.05); /* Fundo levemente transparente para destacar do restante */
+    border-radius: 15px;                       /* Bordas arredondadas da seção */
+    text-align: center;                        /* Centraliza o conteúdo dentro da seção */
+}
+
+.form-contato {
+    display: flex;                             /* Torna o formulário um container flexível */
+    flex-direction: column;                    /* Organiza os campos em coluna (um abaixo do outro) */
+    gap: 15px;                                 /* Espaço entre os campos do formulário */
+    max-width: 500px;                          /* Limita a largura máxima do formulário */
+    margin: 20px auto 0;                       /* Centraliza o formulário horizontalmente e adiciona espaço acima */
+}
+
+.form-contato input, .form-contato textarea {
+    padding: 12px;                             /* Espaçamento interno dos campos */
+    border-radius: 8px;                        /* Bordas arredondadas dos campos */
+    border: 1px solid var(--header-footer);    /* Borda com cor definida pela variável */
+    background: #fff;                          /* Fundo branco para contraste */
+    font-size: 1rem;                           /* Tamanho da fonte dos campos */
+}
+
+.form-contato textarea {
+    height: 100px;                             /* Altura fixa da área de texto */
+    resize: none;                              /* Impede que o usuário redimensione o campo */
+}
+
+/* ============================================================
+   6. RODAPÉ COM BOTÕES (Solicitação do Usuário)
+   ============================================================ */
+   footer {
+    background-color: var(--header-footer); /* Cor de fundo do rodapé, usando variável */
+    color: white;                           /* Texto branco para contraste */
+    text-align: center;                     /* Centraliza o conteúdo do rodapé */
+    padding: 40px 20px;                     /* Espaçamento interno: 40px em cima/baixo e 20px nas laterais */
+    margin-top: 50px;                       /* Espaço acima do rodapé, separando do conteúdo principal */
+    display: flex;                          /* Torna o rodapé um container flexível */
+    flex-direction: column;                 /* Organiza os elementos em coluna (um abaixo do outro) */
+    align-items: center;                    /* Centraliza os itens horizontalmente */
+    gap: 20px;                              /* Espaço entre os elementos dentro do rodapé */
+}
+
+.rodape-botoes {
+    display: flex;                          /* Organiza os botões lado a lado */
+    gap: 15px;                              /* Espaço de 15px entre os botões */
+}
+
+.btn-footer {
+    background-color: var(--bg-card-dark);  /* Cor de fundo dos botões do rodapé */
+    color: white;                           /* Texto branco */
+    padding: 10px 25px;                     /* Espaçamento interno para aumentar área clicável */
+    border-radius: 25px;                    /* Bordas arredondadas (formato de pílula) */
+    text-decoration: none;                  /* Remove sublinhado dos links */
+    font-size: 0.9rem;                      /* Tamanho da fonte */
+    font-weight: bold;                      /* Texto em negrito */
+    border: 1px solid var(--accent);        /* Borda com cor de destaque */
+    transition: 0.3s;                       /* Suaviza mudanças visuais (hover) em 0.3 segundos */
+}
+
+.btn-footer:hover {
+    background-color: var(--accent);        /* Muda a cor de fundo ao passar o mouse */
+    color: var(--bg-dark);                  /* Muda a cor do texto para combinar com o tema escuro */
+}
+
+/* ============================================================
+   7. MODAL (Zoom)
+   ============================================================ */
+   .modal {
+    display: none;                          /* Modal começa oculto */
+    position: fixed;                        /* Fixa o modal na tela, mesmo ao rolar */
+    z-index: 2000;                          /* Garante que fique acima de outros elementos */
+    left: 0; top: 0;                        /* Posiciona no canto superior esquerdo */
+    width: 100%; height: 100%;              /* Ocupa toda a largura e altura da tela */
+    background-color: rgba(0,0,0,0.9);      /* Fundo preto semi-transparente */
+}
+
+.modal-conteudo {
+    margin: auto;                           /* Centraliza horizontalmente */
+    display: block;                         /* Exibe como bloco */
+    max-width: 85%;                         /* Limita largura máxima da imagem */
+    max-height: 85%;                        /* Limita altura máxima da imagem */
+    margin-top: 3%;                         /* Espaço acima da imagem */
+    border: 3px solid var(--accent);        /* Borda com cor de destaque */
+}
+
+.fechar {
+    position: absolute;                     /* Posiciona em relação ao modal */
+    top: 20px; right: 40px;                 /* Localiza no canto superior direito */
+    color: #fff;                            /* Ícone de fechar em branco */
+    font-size: 50px;                        /* Tamanho grande para destaque */
+    cursor: pointer;                        /* Cursor de mão ao passar por cima */
+}
+
+/* ============================================================
+   8. MODO CLARO (Acessibilidade)
+   ============================================================ */
+   body.light-mode {
+    background-color: #f4f4f4;   /* Cor de fundo clara */
+    color: #222;                 /* Texto escuro para contraste */
+}
+
+body.light-mode header, 
+body.light-mode footer {
+    background-color: #ddd;      /* Fundo cinza claro para header e footer */
+    color: #333;                 /* Texto em cinza escuro */
+}
+
+body.light-mode nav a {
+    color: #333;                 /* Links do menu ficam em cinza escuro */
+}
+
+body.light-mode .card {
+    background-color: #fff;      /* Cards com fundo branco */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Sombra suave para destacar os cards */
+}
+
+body.light-mode .card-conteudo p {
+    color: #555;                 /* Texto dos parágrafos em cinza médio */
+}
+
+body.light-mode .btn-footer {
+    background-color: #eee;      /* Botões do rodapé com fundo cinza claro */
+    color: #333;                 /* Texto dos botões em cinza escuro */
+}
+
+.video-wrapper { max-width: 900px; margin: 20px auto; }
+.video-wrapper video { width: 100%; height: auto; display: block; border-radius: 12px; }
+.video-card { box-shadow: 0 6px 18px rgba(0,0,0,0.35); }

@@ -1,22 +1,114 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pixel&Luz | Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon_io/android-chrome-192x192.png" sizes="32x32" type="image/x-icon">
+<meta name="theme-color" content="#6322a3">
 </head>
 <body>
-    <header>
-        <h1>Bem vindo!!!</h1>
-        <p>Vai te impressionar !</p>
+    <header>                                    <!-- Início da seção de cabeçalho da página -->
+        <h1>Pixel&Luz</h1> <!-- Título -->
+        <p>A arte de capturar o invisível.</p>
+        <nav>
+            <ul>                                <!-- Lista para organizar os itens do menu-->
+                <!-- Menu de navegação  -->
+                <li><a href="#galeria-cliques">Home</a></li>   <!-- leva à seção "galeria-cliques" -->
+                <li><a href="#contato">Contato</a></li>        <!-- leva à seção "contato" -->
+                <li><button id="btn-tema">Alternar Tema</button></li>    <!-- Botão que alterna entre tema claro/escuro -->
+            </ul>
+        </nav>
     </header>
-    <section>
-        <!-- Primeira sessao -->
-    </section>
-    <footer>
-        <h1>Volte logo</h1>
-        <p>Nosso blog vai te impressionar</p>
-    </footer>
-</body>
 
-</html>  
+    <main>                                        <!-- Indicar o conteúdo principal da página -->
+        <section id="galeria-cliques">            <!-- Seção da galeria de fotos, identificada pelo id "galeria-cliques" -->
+            <h2>Galeria</h2>           <!-- Título da seção -->
+            
+            <div class="container-cards">         <!-- Agrupa todos os cards da galeria -->
+                
+                <article class="card">            <!-- representa um card individual -->
+                    <img src="./Img/Sofia/Sofia1.png" alt="Sofia em posição de fotografia" class="foto-card" onclick="abrirModal(this.src)">
+                    <div class="card-conteudo">
+                        <h3>Sofia Mendes</h3>
+                        <p>Capturando a energia e o calor do sol em La Push.</p>
+                        <a href="./paginas/Sofia.html" class="btn-trabalho">Veja meu trabalho</a>
+                    </div>
+                </article>
+                
+                <article class="card">
+                    <img src="./Img/AnaClara/AnaClara1.png" alt="Ana Clara em posição de fotografia" class="foto-card" onclick="abrirModal(this.src)">
+                    <!-- Imagem do card, com descrição alternativa (alt) para acessibilidade. O atributo onclick chama a função abrirModal ao clicar na imagem -->
+                    <div class="card-conteudo">        <!-- Div que contém o texto e link do card -->
+                        <h3>Ana Clara Oliveira</h3>
+                        <p>Fotografia de união, lealdade e força selvagem.</p>
+                        <a href="./paginas/AnaClara.html" class="btn-trabalho">Veja meu trabalho</a>   <!-- Abre a galeria do personagem -->
+                    </div>
+                </article>
+                    <!-- A estrutura se repete para cada perfil -->
+                <article class="card">
+                    <img src="./Img/Mariana/Mariana1.jpg" alt="Mariana com tons frios e olhar intenso" class="foto-card" onclick="abrirModal(this.src)">
+                    <div class="card-conteudo">
+                        <h3>Mariana Lopes</h3>
+                        <p>Exploração de sombras, melancolia e tons frios.</p>
+                        <a href="./paginas/Mariana.html" class="btn-trabalho">Veja meu trabalho</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="./Img/Lucas/Lucas1.png" alt="Lucas olhando para sua proxima aventura" class="foto-card" onclick="abrirModal(this.src)">
+                    <div class="card-conteudo">
+                        <h3>Lucas Ferreira</h3>
+                        <p>Retrato artístico com foco em mistério e eternidade.</p>
+                        <a href="./paginas/Lucas.html" class="btn-trabalho">Veja meu trabalho</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="./Img/Thiago/Thiago1.jpg" alt="Thiago com olhar visionário e dinâmico" class="foto-card" onclick="abrirModal(this.src)">
+                    <div class="card-conteudo">
+                        <h3>Thiago Almeida</h3>
+                        <p>Estética visionária e ângulos dinâmicos da moda.</p>
+                        <a href="./paginas/Thiago.html" class="btn-trabalho">Veja meu trabalho</a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="contato">                             <!-- Sessão para entrar em contato -->
+            <h2>Entre em Contato</h2>
+            <!-- Formulário para fazer contato -->
+            <form class="form-contato">
+                <input type="text" placeholder="Seu Nome" required>                  <!-- Campo de nome -->
+                <input type="email" placeholder="Seu E-mail" required>               <!-- campo de e-mail -->
+                <textarea placeholder="Sua Mensagem"></textarea>                     <!-- Mensagem que o usuário deseja enviar -->
+                <button type="submit" class="btn-trabalho">Enviar Mensagem</button>  <!-- Botão para confirmar -->
+            </form>
+        </section>
+    </main>
+
+    <div id="modal" class="modal" onclick="fecharModal()">                            
+        <!-- Div que representa a janela modal (pop-up). O atributo id="modal" permite identificar e manipular via CSS/JS. 
+        class="modal" aplica estilos definidos para modais. onclick="fecharModal()" fecha o modal quando o usuário clica fora da imagem. -->
+        <span class="fechar">&times;</span>                <!-- Elemento <span> usado como botão de fechar. O símbolo "&times;" (×) é um ícone de fechar. -->                         
+        <img class="modal-conteudo" id="img-modal">        <!-- Imagem exibida dentro do modal. class="modal-conteudo" aplica estilo específico. id="img-modal" permite trocar dinamicamente a imagem via JavaScript. -->
+    </div>
+
+    <footer>                                               <!-- Rodapé da página, geralmente contém links e informações finais -->
+        <div class="rodape-botoes">                        <!-- Div que agrupa os botões/links do rodapé -->
+            <a href="#" class="btn-footer">Saiba Mais</a>  <!-- botão que leva para a página saiba mais -->
+            <a href="https://github.com/Edsonsilva-RJ/TrabalhoFront-blog" target="_blank" class="btn-footer">GitHub</a>  <!-- Link para o repositório no GitHub, abre em nova aba por causa de target="_blank" -->
+        </div>
+        <p>&copy; 2026 Pixel&Luz - A arte de capturar o invisível. Projeto SENAI Jacarepaguá.</p>
+    </footer>
+
+    <script src="script.js"></script><!-- Importa o arquivo JavaScript externo "script.js", onde ficam as funções de modo claro e modo escuro -->
+    <!-- Modal para visualizar imagem ampliada -->
+    <div id="modal" class="modal" style="display:none;">
+    <span class="fechar" id="fechar-modal">&times;</span>
+    <img class="modal-conteudo" id="img-modal" src="" alt="Imagem ampliada">
+    </div>
+</body>
+</html>
