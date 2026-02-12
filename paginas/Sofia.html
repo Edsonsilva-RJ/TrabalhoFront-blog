@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<!-- Declara que este é um documento HTML5, a versão padrão atual do HTML -->
+
+<html lang="pt-BR">
+<!-- Tag raiz do documento. O atributo lang="pt-BR" define o idioma como português brasileiro para acessibilidade -->
+
+<head>
+    <!-- Seção de metadados e configurações do documento (não aparece na página) -->
+    
+    <meta charset="UTF-8">
+    <!-- Define a codificação de caracteres como UTF-8, permitindo acentos e caracteres especiais -->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Configura a visualização em dispositivos móveis, fazendo a página ser responsiva -->
+    
+    <title>Galeria | Sofia Silva</title>
+    <!-- Título da página que aparece na aba do navegador -->
+    
+    <link rel="stylesheet" href="../style.css">
+    <!-- Importa o arquivo CSS externo que define os estilos visuais da página -->
+        <link rel="icon" href="../favicon.ico" sizes="32x32" type="image/x-icon">
+    <meta name="theme-color" content="#6322a3">
+</head>
+
+<body>
+    <!-- Corpo principal da página onde todo o conteúdo visível fica -->
+    
+    <header>
+        <!-- Cabeçalho da página, contém título, subtítulo e navegação -->
+        
+        <h1>Pixel&Luz</h1>
+        <!-- Título principal do site (h1 é a tag de maior importância semântica) -->
+        
+        <p>Galeria Exclusiva: Sofia Silva</p>
+        <!-- Parágrafo descritivo da página, informando qual é a galeria -->
+        
+        <nav>
+            <!-- Elemento de navegação semântico para organizar links de menu -->
+            
+            <ul>
+                <!-- Lista não ordenada de navegação -->
+                
+                <li><a href="../index.html">Voltar para Home</a></li>
+                <!-- Item da lista com link que retorna à página inicial (../ sobe um nível de diretório) -->
+                 <li><button id="btn-tema">Alternar Tema</button></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Elemento semântico que define o conteúdo principal da página -->
+        
+        <section id="galeria-personagem">
+            <!-- Seção que agrupa a galeria de fotos. O id permite identificar e estilizar via CSS/JS -->
+            
+            <h2>Trabalhos de Lucas Ferreira</h2>
+            <!-- Título de segunda importância que identifica o conteúdo da seção -->
+            
+            <div class="container-cards">
+                <!-- Container (div) que agrupa todos os cards. A classe permite aplicar estilos Flexbox -->
+                
+                <article class="card">
+                    <!-- Tag semântica article representa um conteúdo independente (cada trabalho/foto é um artigo) -->
+                    
+                    <img src="../Img/Sofia/Sofia2.jpg" alt="Sofia Silva no entardecer" class="foto-card">
+                    <!-- Imagem do card. Alt oferece descrição para acessibilidade. Classe aplica estilos específicos -->
+                    
+                    <div class="card-conteudo">
+                        <!-- Div que agrupa o texto e descrição do card -->
+                        
+                        <h3>Ensaio La Push</h3>
+                        <!-- Título de terceira importância para o nome do trabalho -->
+                        
+                        <p>Uma captura focada na luz quente do entardecer.</p>
+                        <!-- Parágrafo descritivo do trabalho fotográfico -->
+                        
+                    </div>
+                </article>
+
+                <article class="card">
+                    <!-- Segundo card com estrutura idêntica ao primeiro -->
+                    
+                    <img src="../Img/Sofia/Sofia3.jpg" alt="Sofia Silva na floresta" class="foto-card">
+                    <!-- Segunda imagem da galeria com descrição alternativa -->
+                    
+                    <div class="card-conteudo">
+                        <!-- Agrupamento do texto descritivo -->
+                        
+                        <h3>Sombras da Floresta</h3>
+                        <!-- Título do segundo trabalho -->
+                        
+                        <p>Trabalho com contrastes e tons terrosos.</p>
+                        <!-- Descrição técnica do segundo trabalho -->
+                        
+                    </div>
+                </article>
+                <article class="card">
+                    <!-- Segundo card com estrutura idêntica ao primeiro -->
+                    
+                    <img src="../Img/Sofia/Sofia4.jpg" alt="Sofia Silva na floresta" class="foto-card">
+                    <!-- Segunda imagem da galeria com descrição alternativa -->
+                    
+                    <div class="card-conteudo">
+                        <!-- Agrupamento do texto descritivo -->
+                        
+                        <h3>Sombras da Floresta</h3>
+                        <!-- Título do segundo trabalho -->
+                        
+                        <p>Trabalho com contrastes e tons terrosos.</p>
+                        <!-- Descrição técnica do segundo trabalho -->
+                        
+                    </div>
+                </article>
+                <article class="card">
+                    <!-- Segundo card com estrutura idêntica ao primeiro -->
+                    
+                    <img src="../Img/Sofia/Sofia5.jpg" alt="Sofia Silva na floresta" class="foto-card">
+                    <!-- Segunda imagem da galeria com descrição alternativa -->
+                    
+                    <div class="card-conteudo">
+                        <!-- Agrupamento do texto descritivo -->
+                        
+                        <h3>Sombras da Floresta</h3>
+                        <!-- Título do segundo trabalho -->
+                        
+                        <p>Trabalho com contrastes e tons terrosos.</p>
+                        <!-- Descrição técnica do segundo trabalho -->
+                        
+                    </div>
+                </article>
+                <!-- Bloco de vídeo (cole dentro de <main> na galeria) -->
+                <div class="video-wrapper">
+                    <video controls class="video-card" poster="../vid/Sofia-poster.jpg">
+                        <source src="../vid/Sofia.mp4" type="video/mp4">
+                        <source src="../vid/Sofia.webm" type="video/webm">
+                        Seu navegador não suporta vídeo.
+                    </video>
+                    </div>
+                
+            </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Rodapé da página com informações finais e links importantes -->
+        
+        <div class="rodape-botoes">
+            <!-- Container para agrupar os botões do rodapé -->
+            
+            <a href="../index.html" class="btn-footer">Voltar ao Início</a>
+            <!-- Link que retorna à página inicial com classe para estilização de botão -->
+            
+            <a href="https://github.com/Edsonsilva-RJ/TrabalhoFront-blog" target="_blank" class="btn-footer">GitHub</a>
+            <!-- Link para repositório GitHub que abre em nova aba (target="_blank") -->
+            
+        </div>
+        
+        <p>&copy; 2026 Pixel&Luz - Projeto SENAI.</p>
+        <!-- Parágrafo com copyright (&copy; é o símbolo ©) identificando o projeto e ano -->
+        
+    </footer>
+        <!-- Modal para visualizar imagem ampliada -->
+    <div id="modal" class="modal" style="display:none;">
+    <span class="fechar" id="fechar-modal">&times;</span>
+    <img class="modal-conteudo" id="img-modal" src="" alt="Imagem ampliada">
+    </div>
+    <script src="../script.js"></script>
+</body>
+</html>
