@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel&Luz | Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon_io/android-chrome-192x192.png" sizes="32x32" type="image/x-icon">
+    <meta name="theme-color" content="#6322a3">
+</head>
+<body>
+    <header>
+        <h1>Login - Pixel&Luz</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cadastro.html">Criar Conta</a></li>
+                <li><button id="btn-tema">Alternar Tema</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="login">
+            <h2>Acesse sua conta</h2>
+            <form id="form-login" class="form-cadastro">
+                <input type="email" id="login-email" placeholder="Seu E-mail" required>
+                <input type="password" id="login-senha" placeholder="Sua Senha" required>
+                <button type="submit" class="btn-enviar">Entrar</button>
+            </form>
+            <p id="mensagem-erro" style="color: #ff4d4d; margin-top: 10px; display: none;">E-mail ou senha incorretos!</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Pixel&Luz - Projeto SENAI Jacarepaguá.</p>
+    </footer>
+
+    <script src="login.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
