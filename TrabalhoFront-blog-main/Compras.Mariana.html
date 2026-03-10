@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel&Luz | Compras - Mariana Lopes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" sizes="32x32" type="image/x-icon">
+    <meta name="theme-color" content="#6322a3">
+</head>
+<body>
+    <header>
+        <h1>Pixel&Luz</h1>
+        <p>Loja de Fotos - Mariana Lopes</p>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="./paginas/Mariana.html">Galeria</a></li>
+                <li><button id="btn-tema">Alternar Tema</button></li> 
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="produtos">
+            <h2>Fotos disponíveis para compra</h2>
+            <div class="grid-fotos">
+                <div class="foto-item">
+                    <img src="Img/Mariana/Mariana2.jpg" alt="Adega Pixel e Luz">
+                    <h3>Adega Pixel e Luz</h3>
+                    <p>R$ 25,00</p>
+                    <button class="btn-trabalho">Adicionar ao carrinho</button>
+                </div>
+
+                <div class="foto-item">
+                    <img src="Img/Mariana/Mariana2.jpg" alt="Vinicula na Itália">
+                    <h3>Vinicula na Itália</h3>
+                    <p>R$ 30,00</p>
+                    <button class="btn-trabalho">Adicionar ao carrinho</button>
+                </div>
+
+                <div class="foto-item">
+                    <img src="Img/Mariana/Mariana4.jpg" alt="Trabalho da Arquitetura">
+                    <h3>Trabalho da Arquitetura</h3>
+                    <p>R$ 20,00</p>
+                    <button class="btn-trabalho">Adicionar ao carrinho</button>
+                </div>
+
+                <div class="foto-item">
+                    <img src="Img/Mariana/Mariana5.jpg" alt="Pintura do hall de degustação">
+                    <h3>Pintura do hall de degustação</h3>
+                    <p>R$ 35,00</p>
+                    <button class="btn-trabalho">Adicionar ao carrinho</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="carrinho">
+            <h2>Seu carrinho</h2>
+            <ul id="lista-carrinho">
+                <!-- Itens adicionados aparecem aqui -->
+            </ul>
+            <p>Total: <span id="total">R$ 0,00</span></p>
+            <button class="btn-finalizar">Finalizar compra</button>
+        </section>
+    </main>
+    <div id="modal" class="modal" onclick="fecharModal()">                            <!-- Div que representa a janela modal (pop-up). O atributo id="modal" permite identificar e manipular via CSS/JS. 
+        class="modal" aplica estilos definidos para modais. onclick="fecharModal()" fecha o modal quando o usuário clica fora da imagem. -->
+        <span class="fechar">&times;</span>                <!-- Elemento <span> usado como botão de fechar. O símbolo "&times;" (×) é um ícone de fechar. -->                         
+        <img class="modal-conteudo" id="img-modal">        <!-- Imagem exibida dentro do modal. class="modal-conteudo" aplica estilo específico. id="img-modal" permite trocar dinamicamente a imagem via JavaScript. -->
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Pixel&Luz - Projeto SENAI Jacarepaguá.</p>
+    </footer>
+
+   
+    <div id="modal" class="modal" style="display:none;">
+        <span class="fechar" id="fechar-modal">&times;</span>
+        <img class="modal-conteudo" id="img-modal" src="" alt="Imagem ampliada">
+        <script src="script.js"></script>
+</body>
+</html>

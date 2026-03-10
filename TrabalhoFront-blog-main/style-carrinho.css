@@ -1,0 +1,113 @@
+/* Estilo geral */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #6322a3;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+header p {
+    margin: 5px 0 0;
+}
+
+/* Navegação */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Seção do carrinho */
+.carrinho {
+    max-width: 800px;
+    margin: 30px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.carrinho h2 {
+    margin-bottom: 15px;
+    color: #6322a3;
+}
+
+#lista-carrinho {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+}
+
+#lista-carrinho li {
+    background: #f1f1f1;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Botões */
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-finalizar {
+    background-color: #6322a3;
+    color: white;
+    margin-right: 10px;
+}
+
+.btn-finalizar:hover {
+    background-color: #4b197d;
+}
+
+.btn-limpar {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.btn-limpar:hover {
+    background-color: #c0392b;
+}
+
+/* Rodapé */
+footer {
+    background-color: #6322a3;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+    align-items: baseline;
+}
