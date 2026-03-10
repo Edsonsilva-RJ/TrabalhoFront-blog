@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel&Luz | Saiba Mais</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="shortcut icon" href="../favicon_io/favicon.ico" type="image/x-icon">
+    
+    <style>
+        /* Atualização do Outline diretamente no HTML */
+        
+        /* Remove o contorno padrão e adiciona um personalizado para navegação via teclado */
+        :focus {
+            outline: 3px solid var(--accent, #ff9f43);
+            outline-offset: 4px;
+        }
+
+        /* Garante que o outline não apareça em cliques de mouse (apenas teclado), 
+           se o navegador suportar :focus-visible */
+        :focus:not(:focus-visible) {
+            outline: none;
+        }
+
+        /* Estilo específico para a lista de integrantes */
+        .lista-equipe {
+            list-style: none;
+            padding: 20px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .lista-equipe li {
+            background-color: var(--accent, #ff9f43);
+            color: #3f1669; /* Cor de fundo padrão do projeto */
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sobre o Pixel&Luz</h1>
+        <p>Entenda a visão por trás das lentes.</p>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../Página-de-compras.html">Loja</a></li>
+                <li><button id="btn-tema">Alternar Tema</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container-saibamais">
+        <section id="missao">
+            <article>
+                <h2>Nossa Missão</h2>
+                <p>O Pixel&Luz nasceu do desejo de unir a precisão técnica da computação com a sensibilidade artística da fotografia. Nosso objetivo é oferecer uma vitrine para artistas que capturam momentos invisíveis a olhos desatentos.</p>
+            </article>
+        </section>
+
+        <section id="tecnologias">
+            <h2>Excelência Técnica</h2>
+            <div class="grade-tecnologias">
+                <article class="card-tecnico">
+                    <h3>Desenvolvimento</h3>
+                    <p>Site construído com <strong>HTML5 Semântico</strong> e <strong>CSS3 Moderno</strong>.</p>
+                </article>
+                <article class="card-tecnico">
+                    <h3>Interatividade</h3>
+                    <p>Uso de <strong>JavaScript</strong> e <strong>JSON</strong> para dinamismo.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="idealizacao">
+            <article>
+                <h2>Idealização e Equipe</h2>
+                <p>Este projeto foi desenvolvido no <strong>SENAI Jacarepaguá</strong> pelos alunos:</p>
+                
+                <ul class="lista-equipe">
+                    <li>Edson</li>
+                    <li>Raphael</li>
+                    <li>Raphaella</li>
+                    <li>Leticia Vitoria</li>
+                    <li>Washington</li>
+                </ul>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <div class="rodape-botoes">
+            <a href="../index.html" class="btn-footer">Voltar à Home</a>
+            <a href="https://github.com/Edsonsilva-RJ/TrabalhoFront-blog" target="_blank" class="btn-footer">GitHub</a>
+        </div>
+        <p>&copy; 2026 Pixel&Luz - Rio de Janeiro.</p>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
